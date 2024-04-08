@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 
 function Nav() {
   return (
-    <div className="navbar">
+    <div className="navbar my-3">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -29,7 +29,7 @@ function Nav() {
             className={({ isActive }) => (isActive ? "font-semibold" : "")}
             to="/home"
           >
-            Home
+            Home+
           </NavLink>
           <NavLink
             className={({ isActive }) => (isActive ? "font-semibold" : "")}
@@ -57,7 +57,7 @@ function Nav() {
             className={({ isActive }) => (isActive ? "font-semibold" : "")}
             to="/home"
           >
-            Home
+            Home+
           </NavLink>
           <NavLink
             className={({ isActive }) => (isActive ? "font-semibold" : "")}

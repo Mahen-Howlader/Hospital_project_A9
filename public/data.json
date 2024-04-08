@@ -1,0 +1,89 @@
+
+[
+  {
+    "image": "https://i.ibb.co/PFvKFJT/Hotel.jpg",
+    "estate_title": "The Impact of the Hotel Industry on Medical Tourism",
+    "id": "H001",
+    "segment_name": "Hotel",
+    "description": "The hotel industry plays a crucial role in facilitating medical tourism, providing accommodation, amenities, and comfort to patients seeking treatment away from their home countries. Medical tourists often require extended stays for medical procedures and recovery periods, making hotels a key component of their overall experience. Hotels catering to medical tourists may offer specialized services such as transportation to and from medical facilities, dietary accommodations, and accessibility features to accommodate patients' needs. Additionally, these hotels may collaborate with healthcare providers to offer package deals that include accommodation and medical services, further driving the synergy between the two industries. The presence of high-quality hotels can enhance the attractiveness of a medical tourism destination, contributing to its reputation and competitiveness in the global market. Positive experiences with accommodation can also influence patients' overall satisfaction with their medical tourism journey, potentially leading to repeat visits or positive word-of-mouth referrals. Overall, the hotel industry's impact on medical tourism is significant, shaping the experiences and choices of patients seeking healthcare services abroad. By providing comfort, convenience, and support, hotels contribute to the growth and success of the medical tourism sector.",
+    "price": "$200 per night",
+    "status": "rent",
+    "area": "3000 sq ft",
+    "location": "Coastal town of Pacifica, California",
+    "facilities": [
+      "oceanfront balcony",
+      "swimming pool",
+      "fitness center",
+      "on-site restaurant"
+    ]
+  },
+
+  {
+    "image": "https://i.ibb.co/gzFVZRZ/gesthouse.jpg",
+    "estate_title": "Hospital Guesthouse Pacifica Comfort",
+    "id": "HG001",
+    "segment_name": "Hospital Guesthouse",
+    "description": "Pacifica Comfort is a dedicated hospital guesthouse designed to cater to the needs of medical tourists seeking treatment in the coastal town of Pacifica, California. With its close proximity to medical facilities and serene oceanfront location, it offers a comfortable and convenient stay for patients and their families. The guesthouse provides spacious accommodation, amenities, and comfort to ensure a pleasant experience during extended stays for medical procedures and recovery periods. Specialized services include transportation to and from medical facilities, dietary accommodations, and accessibility features to meet patients' needs. Additionally, guests can enjoy facilities such as an oceanfront balcony, swimming pool, fitness center, and on-site restaurant. Pacifica Comfort aims to enhance the attractiveness of Pacifica as a medical tourism destination, contributing to its reputation and competitiveness in the global market.",
+    "price": "$200 per night",
+    "status": "rent",
+    "area": "3000 sq ft",
+    "location": "Coastal town of Pacifica, California",
+    "facilities": [
+      "oceanfront balcony",
+      "swimming pool",
+      "fitness center",
+      "on-site restaurant"
+    ]
+  },
+  {
+    "image": "https://i.ibb.co/YDyJ5Lq/resort.jpg",
+    "estate_title": "Healthcare And Resort Hospitals",
+    "id": "R001",
+    "segment_name": "Resort",
+    "description": "Escape to paradise at the Tropical Oasis Resort, located on the idyllic island of Maui, Hawaii. Surrounded by lush tropical gardens, pristine beaches, and crystal-clear waters, our resort offers a slice of paradise for discerning travelers. Each of our spacious accommodations is thoughtfully designed to blend seamlessly with the natural beauty of the island, featuring luxurious amenities and breathtaking views of the ocean or gardens. Whether you spend your days lounging by the infinity pool, indulging in spa treatments inspired by traditional Hawaiian healing techniques, or exploring the island's hidden gems, every moment at Tropical Oasis is designed to delight the senses. Our on-site restaurant serves up a tantalizing array of local and international cuisine, while our concierge team is on hand to help you plan the perfect island adventure. Whether you're seeking romance, relaxation, or adventure, Tropical Oasis Resort offers an unforgettable experience that will leave you longing to return year after year.",
+    "price": "$500 per night",
+    "status": "rent",
+    "area": "5000 sq ft",
+    "location": "Exotic island of Maui, Hawaii",
+    "facilities": [
+      "private beach access",
+      "spa",
+      "tennis courts",
+      "water sports center"
+    ]
+  },
+  {
+    "image": "https://i.ibb.co/qMQgCnJ/V-hospital.webp",
+    "estate_title": "Mountain Retreat Cabin",
+    "id": "VR001",
+    "segment_name": "Vacation Rental",
+    "description": "Nestled amidst the tranquil embrace of towering pines and craggy peaks, the Mountain Retreat Cabin offers a sanctuary for weary souls seeking solace in nature's embrace. Tucked away in a secluded valley, this rustic haven beckons adventurers and contemplators alike to unwind in its cozy confines.Crafted from weathered timber and adorned with quaint touches of wilderness charm, the cabin blends seamlessly into its natural surroundings. Inside, a warm hearth crackles invitingly, casting a soft glow across the timber-lined walls. Oversized windows frame breathtaking vistas of jagged mountaintops and verdant valleys, inviting guests to marvel at the raw beauty just beyond their doorstep.Equipped with all the comforts of home, yet far removed from the hustle and bustle of city life, the retreat encourages guests to reconnect with the rhythms of nature. Whether it's savoring a steaming cup of coffee on the sun-drenched porch or embarking on an invigorating hike along hidden trails, each moment spent in this mountain hideaway is a testament to the restorative power of the great outdoors.As twilight descends and a blanket of stars unfurls overhead, the Mountain Retreat Cabin stands as a beacon of serenity, offering respite to weary wanderers in search of peace amidst the wilderness",
+    "price": "$150 per night",
+    "status": "rent",
+    "area": "1200 sq ft",
+    "location": "Secluded mountain area of Aspen, Colorado",
+    "facilities": [
+      "wood-burning fireplace",
+      "wrap-around porch",
+      "hot tub",
+      "hiking trails nearby"
+    ]
+  },
+  {
+    "image": "https://i.ibb.co/g4rL9hg/Lodge.jpg",
+    "estate_title": "Riverside Lodge",
+    "id": "L001",
+    "segment_name": "Lodge",
+    "description": "Nestled serenely along the banks of a winding river, the Riverside Lodge embodies tranquility and charm in equal measure. Surrounded by lush foliage and the soothing melody of flowing water, this idyllic retreat offers a haven for those seeking respite from the cacophony of modern life. Built from sturdy logs and accented with rustic details, the lodge exudes a timeless appeal that seamlessly blends with its natural surroundings. Large windows frame picturesque views of the river, allowing guests to immerse themselves in the beauty of the landscape from the comfort of their accommodations. Inside, a cozy interior welcomes weary travelers with its inviting warmth and rustic ambiance. A crackling fireplace serves as the focal point of the common area, inviting guests to gather and share stories beneath its flickering flames. Each thoughtfully-appointed room offers a peaceful sanctuary, complete with plush furnishings and scenic vistas to soothe the soul. Outside, a sprawling deck beckons guests to bask in the serenity of their surroundings, whether by lounging in the sun or enjoying a leisurely meal al fresco. And for those eager to explore, the river offers endless opportunities for adventure, from leisurely kayaking excursions to tranquil.",
+    "price": "$250 per night",
+    "status": "rent",
+    "area": "1800 sq ft",
+    "location": "Rural setting along the riverbanks of Yellowstone National Park, Wyoming",
+    "facilities": [
+      "fire pit",
+      "fishing dock",
+      "picnic area",
+      "guided tours available"
+    ]
+  }
+]
