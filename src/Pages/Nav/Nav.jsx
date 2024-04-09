@@ -1,10 +1,40 @@
 import { Link, NavLink } from "react-router-dom";
 import UseAuthHook from "../../CustomeHook/UseAuthHook";
+import { useRef, useState } from "react";
+import React, { useRef, useEffect } from 'react';
 
 function Nav() {
-  const { user } = UseAuthHook();
+  const { user, logOut, setUser } = UseAuthHook();
+  function handelLogoutFun() {
+    setUser(null);
+    logOut();
+  }
+
+
+
+  
+    const NavbarClassAdd = useRef();
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        const div = NavbarClassAdd.current;
+        if (window.scrollY > 0) {
+          div.classList.add('bg-red-400');
+        } else {
+          div.classList.remove('bg-red-400');
+        }
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+  
+      // Cleanup function to remove event listener
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
+
   return (
-    <div className="navbar my-3">
+    <div ref={NavbarClassAdd} onChange={handleScroll} className="navbar my-3 sticky top-0 z-10">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -51,6 +81,12 @@ function Nav() {
             >
               Update Profile
             </NavLink>
+            <NavLink
+              className={({ isActive }) => (isActive ? "font-semibold" : "")}
+              to="/profile"
+            >
+              Profile
+            </NavLink>
           </ul>
         </div>
         <a className="font-bold text-2xl tracking-wider">Govt.Meditest</a>
@@ -81,43 +117,37 @@ function Nav() {
           >
             Update Profile
           </NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "font-semibold" : "")}
+            to="/profile"
+          >
+            Profile
+          </NavLink>
         </ul>
       </div>
       <div className="navbar-end gap-x-5">
-        <div className="dropdown dropdown-end">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost btn-circle avatar"
-          >
-            <div className="w-10 rounded-full">
+        <div className="">
+          {user && (
+            <button
+              data-tip={user.displayName}
+              className="tooltip tooltip-bottom flex border-2 rounded-full items-center justify-center outline-double focus:outline-none"
+            >
               <img
-                alt="Tailwind CSS Navbar component"
-                src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                src={
+                  user?.photoURL
+                    ? user?.photoURL
+                    : "https://i.ibb.co/M2LnknF/blank-Profile.png"
+                }
+                className="w-10 h-10  rounded-full "
+                alt=""
               />
-            </div>
-          </div>
-          <ul
-            tabIndex={0}
-            className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
-          >
-            <li>
-              <a className="justify-between">
-                Profile
-                <span className="badge">New</span>
-              </a>
-            </li>
-            <li>
-              <a>Settings</a>
-            </li>
-            <li>
-              <a>Logout</a>
-            </li>
-          </ul>
+            </button>
+          )}
         </div>
 
         {user ? (
           <Link
+            onClick={handelLogoutFun}
             className="px-6 font-semibold rounded-full py-2 bg-[#4851D5] text-white"
           >
             Logout

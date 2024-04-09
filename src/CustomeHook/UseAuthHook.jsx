@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { ProviderContext } from '../ContextApi/AuthProvider';
 
-function UseAuthHook(props) {
+function UseAuthHook() {
     const all = useContext(ProviderContext)
     return all;
 }

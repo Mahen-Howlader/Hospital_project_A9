@@ -16,3 +16,5 @@ function Layout() {
 }
 
 export default Layout;
+// https://startup.nextjstemplates.com/signin
+// https://preview.uideck.com/items/medic/

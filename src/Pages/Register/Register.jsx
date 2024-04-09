@@ -1,18 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import UseAuthHook from "../../CustomeHook/UseAuthHook";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 function Register() {
   const [show, setShow] = useState(true);
-  const { createEmailPassword, TwitterCreate, googleCreate } = UseAuthHook();
-
+  const {
+    createEmailPassword,
+    TwitterCreate,
+    googleCreate,
+    userProfileUpdate,
+  } = UseAuthHook();
+  // navigate 
+  const navigate = useNavigate()
   // react hook from
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
 
   // submit register data
   const onSubmit = (data) => {
@@ -29,9 +36,19 @@ function Register() {
     }
 
     createEmailPassword(email, password)
-      .then(() => {
-        alert("Success account create");
+      .then((result) => {
+        // alert("Success account create");
+        userProfileUpdate(name, photo)
+        .then((result) => {
+          alert("Success message");
+          navigate("/")
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+        console.log(result.user);
       })
+
       .catch((error) => {
         alert(error.message);
       });
@@ -40,19 +57,18 @@ function Register() {
 
   function socilaLogin(socialAccount) {
     socialAccount()
-    .then((result) => {
-      console.log(result.user);
-      alert("Success message");
-    })
-    .catch((error) => {
-      alert(error.message)
-    })
+      .then(() => {
+        console.log("Login success");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
   }
 
   return (
     <div className="container mx-auto max-w-md mt-20 bg-white p-6 rounded-lg shadow-md">
       <h2 className="text-2xl font-bold text-center mb-6">Create Account</h2>
-      <form onSubmit={handleSubmit(onSubmit)} id="loginForm">
+      <form onSubmit={handleSubmit(onSubmit)} >
         <div className="mb-4">
           <label htmlFor="email" className="block text-sm font-semibold">
             Name:

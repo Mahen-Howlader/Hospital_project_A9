@@ -7,6 +7,7 @@ import UpdateProfile from "../Pages/UpdateProfile.jsx/UpdateProfile";
 import Service from "../Pages/Service/Service";
 import Doctor from "../Pages/Doctor/Doctor";
 import Detailspage from "../Compnents/Hospitality/Detailspage";
+import Profile from "../Pages/Profile/Profile";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
         {
             path : "/updateprofile",
             element : <UpdateProfile></UpdateProfile>
+        },
+        {
+            path : "/profile",
+            element : <Profile></Profile>
         },
         {
             path : "/details/:id",

@@ -3,8 +3,10 @@ import auth from "../Firebase/FirebaseConfig/firebase.config";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 export const ProviderContext = createContext(null);
 import { GoogleAuthProvider } from "firebase/auth";
@@ -30,10 +32,24 @@ function AuthProvider({ children }) {
   }
 
   //   signOut
-  function logOut (){
-    signOut(auth)
+  function logOut() {
+    signOut(auth);
   }
-  //   onAuthStateChanged
+
+  function userProfileUpdate(name, pahoturl) {
+   return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: pahoturl,
+    });
+  }
+
+  // signInWithEmailAndPassword
+  function LogInWithEmailAndPassword(email,password){
+    return signInWithEmailAndPassword(auth, email, password)
+  }
+
+
+  //onAuthStateChanged
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
@@ -48,7 +64,9 @@ function AuthProvider({ children }) {
     TwitterCreate,
     user,
     setUser,
-    logOut
+    logOut,
+    userProfileUpdate,
+    LogInWithEmailAndPassword
   };
   return (
     <ProviderContext.Provider value={data}>{children}</ProviderContext.Provider>
