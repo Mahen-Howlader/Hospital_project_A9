@@ -6,6 +6,7 @@ import Register from "../Pages/Register/Register";
 import UpdateProfile from "../Pages/UpdateProfile.jsx/UpdateProfile";
 import Service from "../Pages/Service/Service";
 import Doctor from "../Pages/Doctor/Doctor";
+import Detailspage from "../Compnents/Hospitality/Detailspage";
 
 const router = createBrowserRouter([
   {
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
     element:<Layout></Layout>,
     children : [
         {
-            path : "/home",
+            path : "/",
             element : <Home></Home>
         },
         {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
         {
             path : "/updateprofile",
             element : <UpdateProfile></UpdateProfile>
+        },
+        {
+            path : "/details/:id",
+            element : <Detailspage></Detailspage>
         }
     ]
   },

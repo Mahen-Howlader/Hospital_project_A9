@@ -27,7 +27,7 @@ function Nav() {
           >
           <NavLink
             className={({ isActive }) => (isActive ? "font-semibold" : "")}
-            to="/home"
+            to="/"
           >
             Home+
           </NavLink>
@@ -55,7 +55,7 @@ function Nav() {
         <ul className="menu text-xl gap-x-10 menu-horizontal items-center px-1">
           <NavLink
             className={({ isActive }) => (isActive ? "font-semibold" : "")}
-            to="/home"
+            to="/"
           >
             Home+
           </NavLink>
@@ -111,7 +111,7 @@ function Nav() {
         </div>
 
         <Link
-            className="btn btn-sm "
+            className="px-6 font-semibold rounded-full py-2 bg-[#4851D5] text-white"
             to="/login">Login</Link>
       </div>
     </div>

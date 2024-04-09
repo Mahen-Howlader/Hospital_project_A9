@@ -1,11 +1,19 @@
-import { useState } from "react";
-
-async function ApiHook(props) {
+import { useEffect, useState } from "react";
+function ApiHook() {
   const [data, setData] = useState([]);
-  const API = await fetch("/data.json")
-    .then((res) => res.json())
-    .the((data) => setData(data));
-    
+  const [loadingData, setLodaingData] = useState(true);
+  useEffect(() => {
+    const loadData = async () => {
+      setLodaingData(true);
+      const API = await fetch("/data.json");
+      const data = await API.json();
+      setData(data);
+      setLodaingData(false);
+    };
+    loadData();
+  }, []);
+  // console.log(data)
+  return { data, loadingData };
 }
 
 export default ApiHook;
