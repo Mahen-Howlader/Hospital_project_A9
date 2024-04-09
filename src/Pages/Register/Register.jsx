@@ -1,26 +1,57 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import UseAuthHook from "../../CustomeHook/UseAuthHook";
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 function Register() {
-  // Function to handle Facebook login
-  const handleFacebookLogin = () => {
-    // Implement Facebook login logic here
-  };
+  const [show, setShow] = useState(true);
+  const { createEmailPassword, TwitterCreate, googleCreate } = UseAuthHook();
 
-  // Function to handle Twitter login
-  const handleTwitterLogin = () => {
-    // Implement Twitter login logic here
-  };
+  // react hook from
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  // submit register data
   const onSubmit = (data) => {
-    console.log(data);
+    const { password, photo, email, name } = data;
+    if (password.length < 6) {
+      alert("Password must be at least 6 character");
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      alert("Must have a Lowercase letter in the password");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      alert("Must have a Uppercase letter in the password");
+      return;
+    }
+
+    createEmailPassword(email, password)
+      .then(() => {
+        alert("Success account create");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
   };
+  // Social login
+
+  function socilaLogin(socialAccount) {
+    socialAccount()
+    .then((result) => {
+      console.log(result.user);
+      alert("Success message");
+    })
+    .catch((error) => {
+      alert(error.message)
+    })
+  }
+
   return (
     <div className="container mx-auto max-w-md mt-20 bg-white p-6 rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
+      <h2 className="text-2xl font-bold text-center mb-6">Create Account</h2>
       <form onSubmit={handleSubmit(onSubmit)} id="loginForm">
         <div className="mb-4">
           <label htmlFor="email" className="block text-sm font-semibold">
@@ -71,13 +102,22 @@ function Register() {
           <label htmlFor="password" className="block text-sm font-semibold">
             Password:
           </label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-            {...register("password", { required: true })}
-          />
+          <div className="relative">
+            <input
+              type={show ? "password" : "text"}
+              id="password"
+              name="password"
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+              {...register("password", { required: true })}
+            />
+            <span
+              onClick={() => setShow(!show)}
+              className="absolute right-10 top-[50%] text-xl translate-y-[-50%]"
+            >
+              {" "}
+              {show ? <FaEyeSlash /> : <FaEye />}
+            </span>
+          </div>
           {errors.password && (
             <span className="mt-2 text-red-600 text-sm">
               This field is required
@@ -93,28 +133,17 @@ function Register() {
       </form>
       <div className="grid grid-cols-2 gap-5 mt-5">
         <button
-          onClick={handleFacebookLogin}
-          className="bg-blue-700 text-white py-2 px-4 rounded-md hover:bg-blue-800"
-        >
-          Facebook Login
-        </button>
-        <button
-          onClick={handleTwitterLogin}
+          onClick={() => socilaLogin(TwitterCreate)}
           className="bg-blue-400 text-white py-2 px-4 rounded-md hover:bg-blue-500"
         >
           Twitter Login
         </button>
         <button
+          onClick={() => socilaLogin(googleCreate)}
           id="googleLogin"
           className="bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700"
         >
           Google Login
-        </button>
-        <button
-          id="githubLogin"
-          className="bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-900"
-        >
-          GitHub Login
         </button>
       </div>
       <div className="text-center mt-6">

@@ -1,6 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
+import UseAuthHook from "../../CustomeHook/UseAuthHook";
 
 function Nav() {
+  const { user } = UseAuthHook();
   return (
     <div className="navbar my-3">
       <div className="navbar-start">
@@ -25,28 +27,30 @@ function Nav() {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-          <NavLink
-            className={({ isActive }) => (isActive ? "font-semibold" : "")}
-            to="/"
-          >
-            Home+
-          </NavLink>
-          <NavLink
-            className={({ isActive }) => (isActive ? "font-semibold" : "")}
-            to="/service"
-          >
-            Service+
-          </NavLink>
-          <NavLink
-            className={({ isActive }) => (isActive ? "font-semibold" : "")}
-            to="/doctor"
-          >
-            Doctor Booking+
-          </NavLink>
-          <NavLink
-            className={({ isActive }) => (isActive ? "font-semibold" : "")}
-            to="/updateprofile">Update Profile</NavLink>
-   
+            <NavLink
+              className={({ isActive }) => (isActive ? "font-semibold" : "")}
+              to="/"
+            >
+              Home+
+            </NavLink>
+            <NavLink
+              className={({ isActive }) => (isActive ? "font-semibold" : "")}
+              to="/service"
+            >
+              Service+
+            </NavLink>
+            <NavLink
+              className={({ isActive }) => (isActive ? "font-semibold" : "")}
+              to="/doctor"
+            >
+              Doctor Booking+
+            </NavLink>
+            <NavLink
+              className={({ isActive }) => (isActive ? "font-semibold" : "")}
+              to="/updateprofile"
+            >
+              Update Profile
+            </NavLink>
           </ul>
         </div>
         <a className="font-bold text-2xl tracking-wider">Govt.Meditest</a>
@@ -73,8 +77,10 @@ function Nav() {
           </NavLink>
           <NavLink
             className={({ isActive }) => (isActive ? "font-semibold" : "")}
-            to="/updateprofile">Update Profile</NavLink>
-        
+            to="/updateprofile"
+          >
+            Update Profile
+          </NavLink>
         </ul>
       </div>
       <div className="navbar-end gap-x-5">
@@ -110,9 +116,20 @@ function Nav() {
           </ul>
         </div>
 
-        <Link
+        {user ? (
+          <Link
             className="px-6 font-semibold rounded-full py-2 bg-[#4851D5] text-white"
-            to="/login">Login</Link>
+          >
+            Logout
+          </Link>
+        ) : (
+          <Link
+            className="px-6 font-semibold rounded-full py-2 bg-[#4851D5] text-white"
+            to="/login"
+          >
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );

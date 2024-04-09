@@ -1,3 +1,4 @@
+import AuthProvider from "../ContextApi/AuthProvider";
 import Footer from "../Pages/Footer/Footer";
 import Nav from "../Pages/Nav/Nav";
 import { Outlet } from "react-router-dom";
@@ -7,7 +8,7 @@ function Layout() {
     <div className="mx-auto container">
       <Nav></Nav>
       <div className="min-h-[calc(100vh-350px)]">
-        <Outlet></Outlet>
+          <Outlet></Outlet>
       </div>
       <Footer></Footer>
     </div>
