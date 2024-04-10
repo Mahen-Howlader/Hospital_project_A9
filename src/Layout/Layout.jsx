@@ -1,20 +1,22 @@
-import AuthProvider from "../ContextApi/AuthProvider";
 import Footer from "../Pages/Footer/Footer";
 import Nav from "../Pages/Nav/Nav";
 import { Outlet } from "react-router-dom";
 
 function Layout() {
   return (
-    <div className="mx-auto container">
+    <div>
       <Nav></Nav>
-      <div className="min-h-[calc(100vh-350px)]">
+      <div className="mx-auto container">
+        <div className="min-h-[calc(100vh-350px)] ">
           <Outlet></Outlet>
+        </div>
+        <Footer></Footer>
       </div>
-      <Footer></Footer>
     </div>
   );
 }
 
 export default Layout;
 // https://startup.nextjstemplates.com/signin
+// https://preview.uideck.com/items/medic/
 // https://preview.uideck.com/items/medic/

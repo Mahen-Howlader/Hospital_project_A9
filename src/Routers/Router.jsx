@@ -8,11 +8,14 @@ import Service from "../Pages/Service/Service";
 import Doctor from "../Pages/Doctor/Doctor";
 import Detailspage from "../Compnents/Hospitality/Detailspage";
 import Profile from "../Pages/Profile/Profile";
+import NotFount from "../Pages/NotFount/NotFount";
+import Privaterouter from "../PrivateRouter.jsx/Privaterouter";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element:<Layout></Layout>,
+    errorElement: <NotFount></NotFount>,
     children : [
         {
             path : "/",
@@ -44,7 +47,7 @@ const router = createBrowserRouter([
         },
         {
             path : "/details/:id",
-            element : <Detailspage></Detailspage>
+            element :<Privaterouter><Detailspage></Detailspage></Privaterouter> 
         }
     ]
   },

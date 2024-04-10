@@ -7,6 +7,7 @@ function UpdateProfile() {
   const { user,userProfileUpdate } = UseAuthHook(); // Assuming your authentication hook returns user and isLoading status
   const { register, handleSubmit, setValue } = useForm();
     const navigate = useNavigate()
+    
   useEffect(() => {
     if (user) {
       setValue("Name", user.displayName);
@@ -22,7 +23,7 @@ function UpdateProfile() {
         userProfileUpdate(Name, Photo)
         .then((result) => {
           alert("Success update");
-          navigate("/profile")
+          navigate("/")
         })
         .catch((error) => {
           alert(error.message);

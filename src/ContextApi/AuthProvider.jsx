@@ -33,7 +33,7 @@ function AuthProvider({ children }) {
 
   //   signOut
   function logOut() {
-    signOut(auth);
+    signOut(auth)
   }
 
   function userProfileUpdate(name, pahoturl) {
@@ -51,11 +51,12 @@ function AuthProvider({ children }) {
 
   //onAuthStateChanged
   useEffect(() => {
-    onAuthStateChanged(auth, (currentUser) => {
+   const subscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
       }
     });
+    return ()=> subscribe()
   }, []);
 
   const data = {

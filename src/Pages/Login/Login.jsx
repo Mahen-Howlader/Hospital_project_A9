@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate,useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -6,7 +6,12 @@ import UseAuthHook from "../../CustomeHook/UseAuthHook";
 function Login() {
   const [show, setShow] = useState(true);
   const [errorSubmit, setErrorSubmit] = useState("");
+  const location = useLocation();
+  const navigate = useNavigate();
 
+  // console.log(location)
+  const form = location?.state || "/"
+  
   const { TwitterCreate, googleCreate, LogInWithEmailAndPassword } =
     UseAuthHook();
   const {
@@ -17,8 +22,9 @@ function Login() {
 
   const onSubmit = (data) => {
     LogInWithEmailAndPassword(data.email, data.password)
-      .then((result) => {
+      .then(() => {
         alert("Login success");
+        navigate(form)
         setErrorSubmit("")
       })
       .catch((error) => {
@@ -30,6 +36,7 @@ function Login() {
     socialAccount()
       .then(() => {
         console.log("Login success");
+        navigate(form)
       })
       .catch((error) => {
         alert(error.message);

@@ -12,7 +12,7 @@ function Profile() {
       <div className="max-w-md mx-auto rounded-md p-8 sm:flex  sm:space-x-6 bg-gray-100 dark:text-gray-800">
         <div className="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
           <img
-            src={photoURL}
+            src={photoURL || "https://i.ibb.co/M2LnknF/blank-Profile.png"}
             alt=""
             className="object-cover object-center w-full h-full rounded dark:bg-gray-500"
           />
@@ -36,7 +36,7 @@ function Profile() {
                 ></path>
               </svg>
               <span className="dark:text-gray-600">
-                leroy.jenkins@company.com
+               {email}
               </span>
             </span>
             <span className="flex items-center space-x-2">
