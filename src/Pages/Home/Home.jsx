@@ -122,12 +122,14 @@ useEffect(() => {
 
       <div>
         <div
-          className="w-full h-60 sm:h-96 md:h-[540px] rounded-lg flex flex-col mt-2  items-center overflow-hidden justify-center gap-5 lg:gap-10 bg-cover bg-center relative"
+          className=" w-full h-60 sm:h-96 md:h-[540px] rounded-lg flex flex-col mt-2  items-center overflow-hidden justify-center gap-5 lg:gap-10 bg-cover bg-center relative"
           style={{ backgroundImage: `url(${sliders[currentSlider].img})` }}
         >
           {/* text container here */}
+
+
           <div className=" text-white  absolute top-0 left-0 w-full h-full backgroundLinner ">
-           <div className="px-10 flex flex-col justify-center h-full lg:w-6/12">
+           <div className=" px-10 flex flex-col justify-center h-full lg:w-6/12">
            <h1 className="text-xl lg:text-6xl font-semibold mb-3">
               {sliders[currentSlider].title}
             </h1>
@@ -155,8 +157,8 @@ useEffect(() => {
         </div>
       </div>
 
-      <div>
-        <div className="text-center my-10 space-y-2">
+      <div className="mx-auto container">
+        <div className="text-center my-10 space-y-2 ">
           <h1 className="text-3xl font-bold mochiy-pop">Hospitality</h1>
           <h1 className="text-xl">
             Radiant Hospitality Where Every Stay Feels Like Home

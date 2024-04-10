@@ -4,9 +4,9 @@ import { Outlet } from "react-router-dom";
 
 function Layout() {
   return (
-    <div>
+    <div className="bg-[#FFFFFF]">
       <Nav></Nav>
-      <div className="mx-auto container">
+      <div className="">
         <div className="min-h-[calc(100vh-350px)] ">
           <Outlet></Outlet>
         </div>

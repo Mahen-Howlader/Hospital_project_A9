@@ -4,6 +4,7 @@ import UseAuthHook from "../../CustomeHook/UseAuthHook";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import RegisterAnimation from "../../AnimationALL/RegisterAnimation";
+import bgRegister from '/Register.svg'
 
 function Register() {
   const [show, setShow] = useState(true);
@@ -80,9 +81,11 @@ function Register() {
   }
 
   return (
-    <div className="grid lg:items-center gap-y-10 lg:gap-y-0 lg:grid-cols-2 lg:gap-x-24  bg-red-300">
-      <RegisterAnimation className=""></RegisterAnimation>
-      <div className="lg:mx-10 border-2  p-6 rounded-lg shadow-md">
+    <div style={{backgroundImage: `url(${bgRegister})`}} className="bg-no-repeat bg-cover mx-auto bg-center">
+
+      <div className="mx-auto xl:px-20 container grid lg:items-center gap-y-10 lg:gap-y-0 lg:grid-cols-2 lg:gap-x-24 py-20 bg-no-repeat">
+      <RegisterAnimation ></RegisterAnimation>
+      <div className="lg:mx-10 border-2 bg-[#8B9BC1] p-6 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold text-center mb-6">Create Account</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
@@ -179,10 +182,11 @@ function Register() {
           </button>
         </div>
         <div className="text-center mt-6">
-          <Link to="/login" className="text-blue-500 hover:underline">
+          <Link to="/login" className="text-black hover:underline">
             You have an account? Login.
           </Link>
         </div>
+      </div>
       </div>
     </div>
   );

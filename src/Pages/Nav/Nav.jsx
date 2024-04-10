@@ -127,7 +127,7 @@ function Nav() {
           <div className="navbar-end gap-x-5">
             <div className="">
               {user && (
-                <button className="tooltip tooltip-bottom flex border-2 rounded-full items-center justify-center outline-double focus:outline-none">
+                <button  data-tip={displayName} className="tooltip  tooltip-bottom flex border-2 rounded-full items-center justify-center outline-double focus:outline-none">
                   <img
                     src={
                       userImage || "https://i.ibb.co/M2LnknF/blank-Profile.png"
