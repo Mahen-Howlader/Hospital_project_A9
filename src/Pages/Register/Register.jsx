@@ -5,6 +5,8 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import RegisterAnimation from "../../AnimationALL/RegisterAnimation";
 import bgRegister from '/Register.svg'
+import { FaGoogle } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
 
 function Register() {
   const [show, setShow] = useState(true);
@@ -81,11 +83,11 @@ function Register() {
   }
 
   return (
-    <div style={{backgroundImage: `url(${bgRegister})`}} className="bg-no-repeat bg-cover mx-auto bg-center">
+    <div style={{backgroundImage: `url(${bgRegister})`}} className="bg-no-repeat bg-cover mx-auto  bg-center">
 
       <div className="mx-auto xl:px-20 container grid lg:items-center gap-y-10 lg:gap-y-0 lg:grid-cols-2 lg:gap-x-24 py-20 bg-no-repeat">
       <RegisterAnimation ></RegisterAnimation>
-      <div className="lg:mx-10 border-2 bg-[#8B9BC1] p-6 rounded-lg shadow-md">
+      <div className="mx-5 lg:mx-10 border-2 md:bg-[#8B9BC1] p-6 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold text-center mb-6">Create Account</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
@@ -166,19 +168,19 @@ function Register() {
             Register
           </button>
         </form>
-        <div className="grid grid-cols-2 gap-5 mt-5">
+        <div className="grid lg:grid-cols-2 gap-5 mt-5">
           <button
             onClick={() => socilaLogin(TwitterCreate)}
-            className="bg-blue-400 text-white py-2 px-4 rounded-md hover:bg-blue-500"
+            className="bg-blue-400 text-white py-2 px-4 rounded-md flex  justify-center gap-x-4 items-center hover:bg-blue-500"
           >
-            Twitter Login
+           <FaTwitter /> Twitter Login 
           </button>
           <button
             onClick={() => socilaLogin(googleCreate)}
             id="googleLogin"
-            className="bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700"
+            className="bg-red-600 text-white py-2 px-4 rounded-md flex  justify-center gap-x-4 items-center hover:bg-red-700"
           >
-            Google Login
+           <FaGoogle />  Google Login 
           </button>
         </div>
         <div className="text-center mt-6">

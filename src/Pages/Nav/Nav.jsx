@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import UseAuthHook from "../../CustomeHook/UseAuthHook";
 import { useEffect, useState } from "react";
+import Navtopsection from "../../Compnents/Nav/Navtopsection";
 
 function Nav() {
   const { user, logOut, setUser } = UseAuthHook();
@@ -17,7 +18,9 @@ function Nav() {
   }
 
   return (
-    <div className=" top-0 z-10 bg-white shadow-2xl  sticky  ">
+    <div>
+      <Navtopsection></Navtopsection>
+   <div className=" top-0 z-10 bg-white shadow-2xl  sticky  ">
       <div className="mx-auto container ">
         <div className="navbar ml-0 pl-1">
           <div className="navbar-start ">
@@ -158,6 +161,9 @@ function Nav() {
         </div>
       </div>
     </div>
+    </div>
+
+ 
   );
 }
 

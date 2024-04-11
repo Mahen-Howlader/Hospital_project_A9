@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import UseAuthHook from "../../CustomeHook/UseAuthHook";
+import bgRegister from '/Register.svg'
+
 function Login() {
   const [show, setShow] = useState(true);
   const [errorSubmit, setErrorSubmit] = useState("");
@@ -43,7 +45,9 @@ function Login() {
       });
   }
   return (
-    <div className="container mx-auto max-w-md mt-20 bg-white p-6 rounded-lg shadow-md">
+    <div style={{backgroundImage: `url(${bgRegister})`}} className="bg-no-repeat bg-cover mx-auto py-20  bg-center">
+
+    <div className="container mx-auto max-w-md  bg-[#a4b5db] p-6  rounded-lg shadow-md ">
       <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-4">
@@ -114,10 +118,11 @@ function Login() {
         </button>
       </div>
       <div className="text-center mt-6">
-        <Link to="/register" className="text-blue-500 hover:underline">
+        <Link to="/register" className=" hover:underline text-black">
           Don't have an account? Register here.
         </Link>
       </div>
+    </div>
     </div>
   );
 }

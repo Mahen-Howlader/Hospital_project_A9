@@ -37,6 +37,7 @@ function AuthProvider({ children }) {
 
   //   signOut
   function logOut() {
+    // setLoading(false)
     setUser(null);
     signOut(auth);
   }
@@ -56,12 +57,10 @@ function AuthProvider({ children }) {
   //observe
   useEffect(() => {
     const subscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
         setUser(currentUser);
         setLoading(false);
-      }
     });
-    return () => subscribe();
+    return () =>{ subscribe()};
   }, []);
 
   const data = {
