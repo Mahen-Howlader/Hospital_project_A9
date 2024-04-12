@@ -4,9 +4,8 @@ import { useEffect, useState } from "react";
 import Navtopsection from "../../Compnents/Nav/Navtopsection";
 
 function Nav() {
-  const { user, logOut, setUser } = UseAuthHook();
+  const { user, logOut, setUser,loading } = UseAuthHook();
   const { displayName, email, photoURL } = user || {};
-
   const [userImage, SetUserImage] = useState(null);
   useEffect(() => {
     SetUserImage(photoURL);
@@ -17,10 +16,20 @@ function Nav() {
     logOut();
   }
 
+  window.addEventListener("scroll", () => {
+    const navbar = document.getElementById("home");
+    console.log(scrollY);
+    navbar.classList.toggle("fixed", window.scrollY > 50);
+  });
+
   return (
-    <div>
-      <Navtopsection></Navtopsection>
-   <div className=" top-0 z-10 bg-white shadow-2xl  sticky  ">
+  <>
+  { loading|| <div>
+    <Navtopsection></Navtopsection>
+    <div
+      id="home"
+      className="top-0 left-0 w-full transition-all  z-10  bg-white shadow-2xl"
+    >
       <div className="mx-auto container ">
         <div className="navbar ml-0 pl-1">
           <div className="navbar-start ">
@@ -51,7 +60,7 @@ function Nav() {
               >
                 <NavLink
                   className={({ isActive }) =>
-                    isActive ? "font-semibold" : ""
+                    isActive ? " text-[#00ADBE]" : ""
                   }
                   to="/"
                 >
@@ -59,7 +68,7 @@ function Nav() {
                 </NavLink>
                 <NavLink
                   className={({ isActive }) =>
-                    isActive ? "font-semibold" : ""
+                    isActive ? " text-[#00ADBE]" : ""
                   }
                   to="/service"
                 >
@@ -67,7 +76,7 @@ function Nav() {
                 </NavLink>
                 <NavLink
                   className={({ isActive }) =>
-                    isActive ? "font-semibold" : ""
+                    isActive ? " text-[#00ADBE]" : ""
                   }
                   to="/doctor"
                 >
@@ -75,7 +84,7 @@ function Nav() {
                 </NavLink>
                 <NavLink
                   className={({ isActive }) =>
-                    isActive ? "font-semibold" : ""
+                    isActive ? " text-[#00ADBE]" : ""
                   }
                   to="/updateprofile"
                 >
@@ -83,7 +92,7 @@ function Nav() {
                 </NavLink>
                 <NavLink
                   className={({ isActive }) =>
-                    isActive ? "font-semibold" : ""
+                    isActive ? " text-[#00ADBE]" : ""
                   }
                   to="/profile"
                 >
@@ -91,36 +100,42 @@ function Nav() {
                 </NavLink>
               </ul>
             </div>
-            <a className="font-bold text-2xl tracking-wider ">Govt.Meditest</a>
+            <a className="font-bold text-2xl tracking-wider text-[#00ADB5]">
+              Govt.Meditest
+            </a>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu text-xl gap-x-10 menu-horizontal items-center px-1">
               <NavLink
-                className={({ isActive }) => (isActive ? "font-semibold" : "")}
+                className={({ isActive }) =>
+                  isActive ? " text-[#00ADBE]" : ""
+                }
                 to="/"
               >
                 Home+
               </NavLink>
               <NavLink
-                className={({ isActive }) => (isActive ? "font-semibold" : "")}
-                to="/service"
-              >
-                Service+
-              </NavLink>
-              <NavLink
-                className={({ isActive }) => (isActive ? "font-semibold" : "")}
+                className={({ isActive }) =>
+                  isActive ? " text-[#00ADBE]" : ""
+                }
                 to="/doctor"
               >
-                Doctor Booking+
+                Doctor+
               </NavLink>
+              {user && (
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? " text-[#00ADBE]" : ""
+                  }
+                  to="/updateprofile"
+                >
+                  Update Profile
+                </NavLink>
+              )}
               <NavLink
-                className={({ isActive }) => (isActive ? "font-semibold" : "")}
-                to="/updateprofile"
-              >
-                Update Profile
-              </NavLink>
-              <NavLink
-                className={({ isActive }) => (isActive ? "font-semibold" : "")}
+                className={({ isActive }) =>
+                  isActive ? " text-[#00ADBE]" : ""
+                }
                 to="/profile"
               >
                 Profile
@@ -130,10 +145,14 @@ function Nav() {
           <div className="navbar-end gap-x-5">
             <div className="">
               {user && (
-                <button  data-tip={displayName} className="tooltip  tooltip-bottom flex border-2 rounded-full items-center justify-center outline-double focus:outline-none">
+                <button
+                  data-tip={displayName}
+                  className="tooltip  tooltip-bottom flex border-2 rounded-full items-center justify-center outline-double focus:outline-none"
+                >
                   <img
                     src={
-                      userImage || "https://i.ibb.co/M2LnknF/blank-Profile.png"
+                      userImage ||
+                      "https://i.ibb.co/M2LnknF/blank-Profile.png"
                     }
                     className="w-10 h-10  rounded-full "
                     alt=""
@@ -145,13 +164,13 @@ function Nav() {
             {user ? (
               <Link
                 onClick={handelLogoutFun}
-                className="px-6 font-semibold rounded-full py-2 bg-[#4851D5] text-white"
+                className="px-6 font-semibold rounded-full py-2 bg-[#00ADB5] text-white"
               >
                 Logout
               </Link>
             ) : (
               <Link
-                className="px-6 font-semibold rounded-full py-2 bg-[#4851D5] text-white"
+                className="px-6 font-semibold rounded-full py-2 bg-[#00ADB5] text-white"
                 to="/login"
               >
                 Login
@@ -161,9 +180,8 @@ function Nav() {
         </div>
       </div>
     </div>
-    </div>
-
- 
+  </div>}
+  </>
   );
 }
 

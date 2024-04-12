@@ -128,6 +128,7 @@ function Home() {
 
       <div>
         <div
+       
           className=" w-full h-60 sm:h-96 md:h-[540px]  flex flex-col  items-center overflow-hidden justify-center gap-5 lg:gap-10 bg-cover bg-center relative"
           style={{ backgroundImage: `url(${sliders[currentSlider].img})` }}
         >

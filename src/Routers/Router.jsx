@@ -27,23 +27,22 @@ const router = createBrowserRouter([
         },
         {
             path : "/register",
-            element : <Register></Register>
-        },
-        {
-            path : "/service",
-            element : <Service></Service>
+            element :<Privaterouter><Register></Register></Privaterouter> 
         },
         {
             path : "/doctor",
-            element : <Doctor></Doctor>
+            element : <Privaterouter><Doctor></Doctor></Privaterouter> ,
+            loader: async () => {
+                return fetch("doctor.json")
+              },
         },
         {
             path : "/updateprofile",
-            element : <UpdateProfile></UpdateProfile>
+            element : <Privaterouter><UpdateProfile></UpdateProfile></Privaterouter>
         },
         {
             path : "/profile",
-            element : <Profile></Profile>
+            element : <Privaterouter><Profile></Profile></Privaterouter>
         },
         {
             path : "/details/:id",

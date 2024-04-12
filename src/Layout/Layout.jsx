@@ -1,10 +1,18 @@
+import Spinner from "../Compnents/Spinnner/Spinner";
+import ApiHook from "../CustomeHook/ApiHook";
 import Footer from "../Pages/Footer/Footer";
 import Nav from "../Pages/Nav/Nav";
 import { Outlet } from "react-router-dom";
 
 function Layout() {
+  const {loadingData} = ApiHook();
+  if(loadingData){
+    return <Spinner></Spinner>
+  }
   return (
-    <div className="bg-[#FFFFFF]">
+   <>
+    {
+       <div className="bg-[#FFFFFF]">
       <Nav></Nav>
       <div className="">
         <div className="min-h-[calc(100vh-350px)] ">
@@ -12,7 +20,11 @@ function Layout() {
         </div>
         <Footer></Footer>
       </div>
-    </div>
+    </div> 
+    }
+   </>
+
+   
   );
 }
 
