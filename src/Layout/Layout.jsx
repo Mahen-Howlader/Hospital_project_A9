@@ -14,7 +14,7 @@ function Layout() {
 
   return (
     <>
-      {loading || (
+       
         <div className="">
           <div>
             <Nav></Nav>
@@ -26,7 +26,7 @@ function Layout() {
             </div>
           </div>
         </div>
-      )}
+      
     </>
   );
 }

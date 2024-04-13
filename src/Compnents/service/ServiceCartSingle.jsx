@@ -6,7 +6,7 @@ function ServiceCartSingle({ props }) {
   //   console.log(svg)
   //   console.log(props)
   return (
-  <div className="group-hover:blur-sm hover:!blur-none">
+  <div className="md:group-hover:blur-sm md:hover:!blur-none">
       <div className="hover:scale-110   transition-all">
       <div className="bg-[#FFFFFF] hover:text-white hover:bg-[#13B2BA]  shadow-xl p-7 space-y-2 rounded">
       <div className="" dangerouslySetInnerHTML={{ __html: svg }} />

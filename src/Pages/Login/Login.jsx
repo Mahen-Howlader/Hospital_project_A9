@@ -6,7 +6,8 @@ import UseAuthHook from "../../CustomeHook/UseAuthHook";
 import bgRegister from "/Register.svg";
 import { Helmet } from "react-helmet-async";
 import { FaGoogle, FaTwitter } from "react-icons/fa6";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function Login() {
   const [show, setShow] = useState(true);
   const [errorSubmit, setErrorSubmit] = useState("");
@@ -26,24 +27,27 @@ function Login() {
 
   const onSubmit = (data) => {
     LogInWithEmailAndPassword(data.email, data.password)
-      .then(() => {
-        alert("Login success");
+    .then(() => {
+        toast.success("Wow Login Success");
+        // alert("Login success");
         navigate(form);
         setErrorSubmit("");
       })
       .catch((error) => {
-        console.log(error.message);
+        // console.log(error.message);
+        toast.error(`${error.message}`);
         setErrorSubmit(error.message);
       });
   };
   function socilaLogin(socialAccount) {
     socialAccount()
       .then(() => {
-        console.log("Login success");
+        // console.log("Login success");
+        toast.success("Wow Success Login");
         navigate(form);
       })
       .catch((error) => {
-        alert(error.message);
+        toast.error(`${error.message}`);
       });
   }
   return (
@@ -108,7 +112,6 @@ function Login() {
               .replace(")", "")
               .replace("/", "")}
           </p>
-
           <button
             type="submit"
             className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600"
@@ -133,7 +136,7 @@ function Login() {
         </div>
         <div className="text-center mt-6">
           <Link to="/register" className=" hover:underline text-black">
-            Don't have an account? Register here.
+            Don't have an account? <span className="font-semibold text-blue-800">Register here.</span>
           </Link>
         </div>
       </div>

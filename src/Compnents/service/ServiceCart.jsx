@@ -119,7 +119,9 @@ function ServiceCart() {
     <div>
       <div className="grid md:grid-cols-2  lg:grid-cols-3 my-10 gap-20 group ">
         {data.map((val, index) => {
-         return <ServiceCartSingle key={index} props={val}></ServiceCartSingle>;
+          return (
+            <ServiceCartSingle key={index} props={val}></ServiceCartSingle>
+          );
         })}
       </div>
     </div>

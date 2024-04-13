@@ -1,11 +1,12 @@
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa6";
 import Map from "../../Compnents/Map/Map";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
     <div className="bg-neutral">
-      <footer className="footer  md:grid-cols-2 lg:grid-cols-3 gap-x-10 p-10 container mx-auto text-neutral-content">
-        <nav>
+      <footer className=" grid md:grid-cols-2 gap-5 lg:grid-cols-3 gap-x-10 p-10 container mx-auto text-neutral-content">
+        <nav className="space-y-3">
           <a
             href="#home"
             className="font-bold text-3xl tracking-wider text-[#00ADB5]"
@@ -30,18 +31,18 @@ function Footer() {
             </div>
           </div>
         </nav>
-        <nav>
+        <nav className="">
           <h6 className="footer-title text-xl ">Quick Link</h6>
-          <a className="link link-hover">Home</a>
-          <a className="link link-hover">Service+</a>
-          <a className="link link-hover">Doctor Booking+</a>
-          <a className="link link-hover">Update Profile</a>
-          <a className="link link-hover">Profile</a>
+          <Link  to="" className="block">Home</Link>
+          <Link  to="" className="block">Service+</Link>
+          <Link  to="" className="block">Doctor Booking+</Link>
+          <Link  to="" className="block">Update Profile</Link>
+          <Link  to="" className="block">Profile</Link>
         </nav>
-        <nav>
+        <nav className="w-full">
           <h6 className="footer-title text-xl ">Medical Location</h6>
-          <div>
-        <Map></Map>
+          <div className="w-full">
+            <Map></Map>
           </div>
         </nav>
       </footer>

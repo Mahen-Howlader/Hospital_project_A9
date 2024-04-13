@@ -1,20 +1,19 @@
 import { Link, NavLink } from "react-router-dom";
 import UseAuthHook from "../../CustomeHook/UseAuthHook";
-import { useEffect, useRef, useState } from "react";
 import Navtopsection from "../../Compnents/Nav/Navtopsection";
+import { toast } from 'react-toastify';
 
 function Nav() {
+
   const { user, logOut, setUser, loading } = UseAuthHook();
   const { displayName, email, photoURL } = user || {};
-  const [userImage, SetUserImage] = useState(null);
-  useEffect(() => {
-    SetUserImage(photoURL);
-  });
 
   function handelLogoutFun() {
     setUser(null);
     logOut();
+    toast.success("Logout Success");
   }
+
   window.addEventListener("scroll", () => {
     const navbar = document.getElementById("home");
     // console.log(scrollY);
@@ -163,7 +162,7 @@ function Nav() {
                       >
                         <img
                           src={
-                            userImage ||
+                            photoURL ||
                             "https://i.ibb.co/M2LnknF/blank-Profile.png"
                           }
                           className="w-10 h-10  rounded-full "

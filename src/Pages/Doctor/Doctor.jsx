@@ -11,7 +11,7 @@ function Doctor() {
         <title>Hospital || Doctor</title>
       </Helmet>
     <div className="container mx-auto ">
-      <div className="my-5 space-y-2 text-center w-6/12 mx-auto ">
+      <div className="my-5 space-y-2 text-center w-10/12 lg:w-6/12 mx-auto ">
         <h1 className="text-4xl font-bold text-white">Meet Our Doctors</h1>
         <p className="text-gray-600">
           Meet our caring doctors committed to providing personalized healthcare

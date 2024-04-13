@@ -1,35 +1,33 @@
-// https://i.ibb.co/SvmpW05/slider-3.jpg
-// https://i.ibb.co/HhC1Lt0/slider-1.jpg
-// https://i.ibb.co/kGtZR3M/slider-2.jpg
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/bundle";
-import { Navigation } from "swiper/modules";
 import Hospitality from "../../Compnents/Hospitality/Hospitality";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Yourhealth from "../../Compnents/YourHealth/Yourhealth";
 import WeDo from "../../Compnents/We-Do/WeDo";
-import Service from "../Service/Service";
 import HomepageService from "../../Compnents/service/HomepageService";
 import ServiceCart from "../../Compnents/service/ServiceCart";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+// ..
+AOS.init();
 
 function Home() {
   // navigateUI
+
   const [currentSlider, setCurrentSlider] = useState(0);
   const sliders = [
-    {
-      img: "https://i.ibb.co/SvmpW05/slider-3.jpg",
-      title: " Your Health is Our Top Priority",
-      des: "Your health is our paramount concern. We prioritize your well-being through comprehensive care and advanced medical solutions.",
-    },
     {
       img: "https://i.ibb.co/HhC1Lt0/slider-1.jpg",
       title: "Complete Healthcare Solution",
       des: "Our comprehensive healthcare solution integrates top-notch medical expertise with advanced equipment to ensure holistic wellness for our community.",
     },
+    {
+      img: "https://i.ibb.co/SvmpW05/slider-3.jpg",
+      title: " Your Health is Our Top Priority",
+      des: "Your health is our paramount concern. We prioritize your well-being through comprehensive care and advanced medical solutions.",
+    },
+
     {
       img: "https://i.ibb.co/kGtZR3M/slider-2.jpg",
       title: "Best Doctors and Equipments in Town",
@@ -65,7 +63,7 @@ function Home() {
 
       <div>
         <div
-          className=" w-full h-60 sm:h-96 md:h-[540px]  flex flex-col  items-center overflow-hidden justify-center gap-5 lg:gap-10 bg-cover bg-center relative"
+          className=" w-full h-60 sm:h-96 md:h-[450px] lg:h-[540px]  flex flex-col  items-center overflow-hidden justify-center gap-5 lg:gap-10 bg-cover bg-center relative"
           style={{ backgroundImage: `url(${sliders[currentSlider].img})` }}
         >
           {/* arrow */}
@@ -125,10 +123,18 @@ function Home() {
           <div className=" text-white  absolute top-0 left-0 w-full h-full backgroundLinner ">
             <div className="container mx-auto flex items-center h-full">
               <div className=" px-10 flex flex-col space-y-1 lg:space-y-6 lg:w-8/12">
-                <h1 className="text-2xl md:text-4xl lg:text-6xl font-semibold mb-3">
+                <h1
+                  data-aos-duration="1000"
+                  data-aos="fade-left"
+                  className="text-2xl md:text-4xl lg:text-6xl font-semibold mb-3"
+                >
                   {sliders[currentSlider].title}
                 </h1>
-                <p className="text-sm md:text-base lg:text-lg">
+                <p
+                 data-aos-duration="1000"
+                 data-aos-delay="1000"
+                 data-aos="fade-left"
+                className="text-sm md:text-base lg:text-lg">
                   {sliders[currentSlider].des}
                 </p>
               </div>
@@ -154,8 +160,12 @@ function Home() {
 
       {/* doctorCart */}
       <div className="mx-auto container  px-5 md:px-0">
-        <div className="text-center mt-20 mb-10 space-y-2 ">
-          <h1 className="text-4xl font-semibold  ">Hospitality</h1>
+        <div
+          data-aos-duration="1000"
+          data-aos="zoom-in-down"
+          className="text-center mt-20 mb-10 space-y-2 "
+        >
+          <h1 className="text-4xl font-semibold ">Hospitality</h1>
           <h1 className="text-xl">
             Radiant Hospitality Where Every Stay Feels Like Home
           </h1>

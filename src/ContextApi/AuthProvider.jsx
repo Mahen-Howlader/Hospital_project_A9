@@ -43,6 +43,7 @@ function AuthProvider({ children }) {
   }
 
   function userProfileUpdate(name, pahoturl) {
+    setLoading(true)
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: pahoturl,
@@ -51,6 +52,7 @@ function AuthProvider({ children }) {
 
   // signInWithEmailAndPassword
   function LogInWithEmailAndPassword(email, password) {
+    setLoading(true)
     return signInWithEmailAndPassword(auth, email, password);
   }
 
@@ -60,8 +62,11 @@ function AuthProvider({ children }) {
         setUser(currentUser);
         setLoading(false);
     });
-    return () =>{ subscribe()};
+    return () =>subscribe();
   }, []);
+
+
+
 
   const data = {
     createEmailPassword,
@@ -73,6 +78,7 @@ function AuthProvider({ children }) {
     userProfileUpdate,
     LogInWithEmailAndPassword,
     loading,
+    setLoading
   };
   return (
     <ProviderContext.Provider value={data}>{children}</ProviderContext.Provider>
