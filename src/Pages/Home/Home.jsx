@@ -124,8 +124,8 @@ function Home() {
           </div>
           <div className=" text-white  absolute top-0 left-0 w-full h-full backgroundLinner ">
             <div className="container mx-auto flex items-center h-full">
-              <div className=" px-10 flex flex-col space-y-6 lg:w-8/12">
-                <h1 className="text-4xl lg:text-6xl font-semibold mb-3">
+              <div className=" px-10 flex flex-col space-y-1 lg:space-y-6 lg:w-8/12">
+                <h1 className="text-2xl md:text-4xl lg:text-6xl font-semibold mb-3">
                   {sliders[currentSlider].title}
                 </h1>
                 <p className="text-sm md:text-base lg:text-lg">

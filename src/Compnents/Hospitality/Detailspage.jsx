@@ -26,7 +26,6 @@ function Detailspage() {
 
   const imageStyle = {
     width: "100%",
-    height: "500px",
   };
 
   const textStyle = {
@@ -53,11 +52,11 @@ function Detailspage() {
       <Helmet>
         <title>Hospital || Details</title>
       </Helmet>
-      <div className="container px-28 mx-auto py-6">
+      <div className="container md:px-28 mx-auto px-5 md:px-0 py-6">
         <div className="bg-white shadow-md rounded-lg overflow-hidden">
           {/* Product Image */}
-          <div className="w-full">
-            <img src={image} alt="Product Image" style={imageStyle} />
+          <div className="w-full overflow-hidden">
+            <img className="h-72 object-cover md:h-[400px] lg:h-[500px]" src={image} alt="Product Image" style={imageStyle} />
           </div>
           {/* Product Details */}
           <div className="p-6">
@@ -76,12 +75,12 @@ function Detailspage() {
                 Price : {price}
               </span>
               {/* Add to Cart Button */}
-              <button
+              {/* <button
                 style={buttonStyle}
                 className="hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
               >
                 Add to Cart
-              </button>
+              </button> */}
             </div>
             {/* Facilities */}
             <div className="mb-4 space-y-2">
