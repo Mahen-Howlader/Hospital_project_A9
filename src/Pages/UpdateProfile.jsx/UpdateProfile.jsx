@@ -39,7 +39,7 @@ function UpdateProfile() {
       {user ? (
         <div
           style={{ backgroundImage: `url(${bgRegister})` }}
-          className="bg-no-repeat bg-cover mx-auto py-20  bg-center"
+          className="bg-no-repeat bg-cover mx-auto py-20 px-5 md:px-0  bg-center"
         >
            <Helmet>
         <title>Hospital || UpdateProfile</title>

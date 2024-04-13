@@ -1,5 +1,5 @@
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import Map from "../../Compnents/Map/Map";
 
 function Footer() {
   return (
@@ -40,9 +40,9 @@ function Footer() {
         </nav>
         <nav>
           <h6 className="footer-title text-xl ">Medical Location</h6>
-          <a className="link link-hover">Terms of use</a>
-          <a className="link link-hover">Privacy policy</a>
-          <a className="link link-hover">Cookie policy</a>
+          <div>
+        <Map></Map>
+          </div>
         </nav>
       </footer>
     </div>

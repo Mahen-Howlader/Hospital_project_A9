@@ -84,7 +84,7 @@ function Register() {
   }
 
   return (
-    <div style={{backgroundImage: `url(${bgRegister})`}} className="bg-no-repeat bg-cover mx-auto  bg-center">
+    <div style={{backgroundImage: `url(${bgRegister})`}} className="bg-no-repeat bg-cover mx-auto px-5 md:px-0  bg-center">
  <Helmet>
         <title>Hospital || Register</title>
       </Helmet>

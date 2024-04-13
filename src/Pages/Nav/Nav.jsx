@@ -173,7 +173,7 @@ function Nav() {
                     )}
                   </div>
 
-                  <div className="hidden lg:block">
+                  <div className="hidden text-center lg:block">
                     {user ? (
                       <Link
                         onClick={handelLogoutFun}
