@@ -1,12 +1,15 @@
 import Doctorcard from "./Doctorcard";
 import { useLoaderData } from "react-router-dom";
 import Marquee from "react-fast-marquee";
+import { Helmet } from "react-helmet-async";
 function Doctor() {
   const data = useLoaderData();
   //   console.log(data)
   return (
     <div className="bg-gradient-to-r from-cyan-500 to-[#31d1da] py-20 w-full">
-
+ <Helmet>
+        <title>Hospital || Doctor</title>
+      </Helmet>
     <div className="container mx-auto ">
       <div className="my-5 space-y-2 text-center w-6/12 mx-auto ">
         <h1 className="text-4xl font-bold text-white">Meet Our Doctors</h1>

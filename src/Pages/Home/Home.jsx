@@ -9,6 +9,12 @@ import "swiper/css/bundle";
 import { Navigation } from "swiper/modules";
 import Hospitality from "../../Compnents/Hospitality/Hospitality";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import Yourhealth from "../../Compnents/YourHealth/Yourhealth";
+import WeDo from "../../Compnents/We-Do/WeDo";
+import Service from "../Service/Service";
+import HomepageService from "../../Compnents/service/HomepageService";
+import ServiceCart from "../../Compnents/service/ServiceCart";
 
 function Home() {
   // navigateUI
@@ -52,83 +58,13 @@ function Home() {
   }, [currentSlider]);
 
   return (
-    <div>
-      {/* <div className="">
-        <Swiper
-          navigation={true}
-          loop={true}
-          modules={[Navigation]}
-          className="h-[50vh]  md:h-[550px] rounded-lg mt-2"
-        >
-          <SwiperSlide>
-            <div className="w-full h-full relative">
-              <img
-                className="h-full w-full object-cover "
-                src="https://i.ibb.co/SvmpW05/slider-3.jpg"
-                alt=""
-              />
-              <div className="absolute top-0 left-0 w-full h-full backgroundLinner">
-                <div className="flex justify-center w-6/12 ml-5 poppins-medium space-y-6 text-white  h-full flex-col">
-                  <h1 className="text-[60px] font-extrabold  ">
-                    Your Health is Our Top Priority
-                  </h1>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Explicabo ea recusandae facere nihil, ipsum dicta saepe
-                    similique asperiores placeat quidem!
-                  </p>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="w-full h-full relative">
-              <img
-                className="h-full w-full object-cover "
-                src="https://i.ibb.co/HhC1Lt0/slider-1.jpg"
-                alt=""
-              />
-              <div className="absolute top-0 left-0 w-full h-full backgroundLinner">
-                <div className="flex justify-center w-6/12 ml-5 poppins-medium space-y-6 text-white  h-full flex-col">
-                  <h1 className="text-[60px] font-extrabold  ">
-                    Your Health is Our Top Priority
-                  </h1>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Explicabo ea recusandae facere nihil, ipsum dicta saepe
-                    similique asperiores placeat quidem!
-                  </p>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="w-full h-full relative">
-              <img
-                className="h-full w-full object-cover "
-                src="https://i.ibb.co/kGtZR3M/slider-2.jpg"
-                alt=""
-              />
-              <div className="absolute top-0 left-0 w-full h-full backgroundLinner">
-                <div className="flex justify-center w-6/12 ml-5 poppins-medium space-y-6 text-white  h-full flex-col">
-                  <h1 className="text-[60px] font-extrabold  ">
-                    Your Health is Our Top Priority
-                  </h1>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Explicabo ea recusandae facere nihil, ipsum dicta saepe
-                    similique asperiores placeat quidem!
-                  </p>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-        </Swiper>
-      </div> */}
+    <div className="">
+      <Helmet>
+        <title>Hospital || Home</title>
+      </Helmet>
 
       <div>
         <div
-       
           className=" w-full h-60 sm:h-96 md:h-[540px]  flex flex-col  items-center overflow-hidden justify-center gap-5 lg:gap-10 bg-cover bg-center relative"
           style={{ backgroundImage: `url(${sliders[currentSlider].img})` }}
         >
@@ -187,16 +123,16 @@ function Home() {
             </button>
           </div>
           <div className=" text-white  absolute top-0 left-0 w-full h-full backgroundLinner ">
-        <div className="container mx-auto flex items-center h-full">
-        <div className=" px-10 flex flex-col space-y-6 lg:w-8/12">
-              <h1 className="text-4xl lg:text-6xl font-semibold mb-3">
-                {sliders[currentSlider].title}
-              </h1>
-              <p className="text-sm md:text-base lg:text-lg">
-                {sliders[currentSlider].des}
-              </p>
+            <div className="container mx-auto flex items-center h-full">
+              <div className=" px-10 flex flex-col space-y-6 lg:w-8/12">
+                <h1 className="text-4xl lg:text-6xl font-semibold mb-3">
+                  {sliders[currentSlider].title}
+                </h1>
+                <p className="text-sm md:text-base lg:text-lg">
+                  {sliders[currentSlider].des}
+                </p>
+              </div>
             </div>
-        </div>
           </div>
         </div>
         {/* slider container */}
@@ -216,14 +152,29 @@ function Home() {
         </div>
       </div>
 
-      <div className="mx-auto container">
-        <div className="text-center my-10 space-y-2 ">
+      {/* doctorCart */}
+      <div className="mx-auto container  px-5 md:px-0">
+        <div className="text-center mt-20 mb-10 space-y-2 ">
           <h1 className="text-4xl font-semibold  ">Hospitality</h1>
           <h1 className="text-xl">
             Radiant Hospitality Where Every Stay Feels Like Home
           </h1>
         </div>
         <Hospitality></Hospitality>
+      </div>
+
+      {/* Yourhealth */}
+      <div className="mt-28 container mx-auto  px-5 md:px-0">
+        <Yourhealth></Yourhealth>
+        <WeDo></WeDo>
+      </div>
+
+      {/* service  */}
+      <div className="mt-28 container mx-auto  px-5 md:px-0">
+        <HomepageService></HomepageService>
+        <div>
+          <ServiceCart></ServiceCart>
+        </div>
       </div>
     </div>
   );

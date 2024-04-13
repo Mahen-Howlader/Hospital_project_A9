@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         },
         {
             path : "/register",
-            element :<Privaterouter><Register></Register></Privaterouter> 
+            element :<Register></Register>
         },
         {
             path : "/doctor",

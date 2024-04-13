@@ -58,30 +58,23 @@ function Nav() {
                 tabIndex={0}
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
               >
-                <NavLink
-                  className={({ isActive }) =>
-                    isActive ? " text-[#00ADBE]" : ""
-                  }
-                  to="/"
-                >
-                  Home+
-                </NavLink>
-                <NavLink
-                  className={({ isActive }) =>
-                    isActive ? " text-[#00ADBE]" : ""
-                  }
-                  to="/service"
-                >
-                  Service+
-                </NavLink>
-                <NavLink
-                  className={({ isActive }) =>
-                    isActive ? " text-[#00ADBE]" : ""
-                  }
-                  to="/doctor"
-                >
-                  Doctor Booking+
-                </NavLink>
+                 <NavLink
+                className={({ isActive }) =>
+                  isActive ? " text-[#00ADBE]" : ""
+                }
+                to="/"
+              >
+                Home+
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? " text-[#00ADBE]" : ""
+                }
+                to="/doctor"
+              >
+                Doctor+
+              </NavLink>
+              {user && (
                 <NavLink
                   className={({ isActive }) =>
                     isActive ? " text-[#00ADBE]" : ""
@@ -90,14 +83,15 @@ function Nav() {
                 >
                   Update Profile
                 </NavLink>
-                <NavLink
-                  className={({ isActive }) =>
-                    isActive ? " text-[#00ADBE]" : ""
-                  }
-                  to="/profile"
-                >
-                  Profile
-                </NavLink>
+              )}
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? " text-[#00ADBE]" : ""
+                }
+                to="/profile"
+              >
+                Profile
+              </NavLink>
               </ul>
             </div>
             <a className="font-bold text-2xl tracking-wider text-[#00ADB5]">

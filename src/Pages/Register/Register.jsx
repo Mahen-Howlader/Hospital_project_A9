@@ -7,6 +7,7 @@ import RegisterAnimation from "../../AnimationALL/RegisterAnimation";
 import bgRegister from '/Register.svg'
 import { FaGoogle } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 function Register() {
   const [show, setShow] = useState(true);
@@ -84,7 +85,9 @@ function Register() {
 
   return (
     <div style={{backgroundImage: `url(${bgRegister})`}} className="bg-no-repeat bg-cover mx-auto  bg-center">
-
+ <Helmet>
+        <title>Hospital || Register</title>
+      </Helmet>
       <div className="mx-auto xl:px-20 container grid lg:items-center gap-y-10 lg:gap-y-0 lg:grid-cols-2 lg:gap-x-24 py-20 bg-no-repeat">
       <RegisterAnimation ></RegisterAnimation>
       <div className="mx-5 lg:mx-10 border-2 md:bg-[#8B9BC1] p-6 rounded-lg shadow-md">

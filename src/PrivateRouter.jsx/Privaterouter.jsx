@@ -1,6 +1,7 @@
 import { GiReturnArrow } from "react-icons/gi";
 import UseAuthHook from "../CustomeHook/UseAuthHook";
 import { Navigate, useLocation } from "react-router-dom";
+import Spinner from "../Compnents/Spinnner/Spinner";
 
 function Privaterouter({ children }) {
   const location = useLocation();
@@ -8,8 +9,7 @@ function Privaterouter({ children }) {
   
   // console.log(loading)
 
-  if (loading) {
-    return <span className="loading loading-dots loading-lg"></span>;
+  if (loading) {    return <Spinner></Spinner>
   }
 
   if(user){

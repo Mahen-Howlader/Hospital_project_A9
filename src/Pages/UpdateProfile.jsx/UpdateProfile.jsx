@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import bgRegister from "/Register.svg";
 import NotFount from "../NotFount/NotFount";
+import { Helmet } from "react-helmet-async";
 
 function UpdateProfile() {
   //   console.log(user)
@@ -40,6 +41,9 @@ function UpdateProfile() {
           style={{ backgroundImage: `url(${bgRegister})` }}
           className="bg-no-repeat bg-cover mx-auto py-20  bg-center"
         >
+           <Helmet>
+        <title>Hospital || UpdateProfile</title>
+      </Helmet>
           <div className="container mx-auto max-w-md  bg-white p-6 rounded-lg shadow-2xl border">
             <h2 className="text-2xl font-bold text-center mb-6">
               Change Profile
