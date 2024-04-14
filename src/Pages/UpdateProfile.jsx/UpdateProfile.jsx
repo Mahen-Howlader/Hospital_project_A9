@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import UseAuthHook from "../../CustomeHook/UseAuthHook";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -10,11 +10,12 @@ import "aos/dist/aos.css"; // You can also use <link> for styles
 import auth from "../../Firebase/FirebaseConfig/firebase.config";
 // ..
 AOS.init();
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 function UpdateProfile() {
   //   console.log(user)
-  const { user, userProfileUpdate,setLoading ,setUser} = UseAuthHook(); // Assuming your authentication hook returns user and isLoading status
+
+  const { user, userProfileUpdate, setLoading, setUser } = UseAuthHook(); // Assuming your authentication hook returns user and isLoading status
   const { register, handleSubmit, setValue } = useForm();
   const navigate = useNavigate();
 
@@ -25,16 +26,21 @@ function UpdateProfile() {
     }
   }, [user, setValue]);
 
-  //   console.log(displayName);
+  const ref = useRef();
+    // console.log(ref.current);
+ 
+
+
 
   const onSubmitData = (data) => {
     // console.log(data);
     const { Name, Photo } = data;
+
     userProfileUpdate(Name, Photo)
       .then((result) => {
-        setUser(auth.currentUser)
+        setUser(auth.currentUser);
         toast.success("Wow Success");
-        setLoading(false)
+        setLoading(false);
       })
       .catch((error) => {
         // alert(error.message);
@@ -86,6 +92,8 @@ function UpdateProfile() {
 
               <button
                 type="submit"
+                ref={ref}
+                
                 className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600"
               >
                 Update

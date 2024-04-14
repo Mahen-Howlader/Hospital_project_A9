@@ -1,10 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import UseAuthHook from "../../CustomeHook/UseAuthHook";
 import Navtopsection from "../../Compnents/Nav/Navtopsection";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 function Nav() {
-
   const { user, logOut, setUser, loading } = UseAuthHook();
   const { displayName, email, photoURL } = user || {};
 
@@ -165,7 +164,7 @@ function Nav() {
                             photoURL ||
                             "https://i.ibb.co/M2LnknF/blank-Profile.png"
                           }
-                          className="w-10 h-10  rounded-full "
+                          className="w-10 h-10 object-cover  rounded-full "
                           alt=""
                         />
                       </button>

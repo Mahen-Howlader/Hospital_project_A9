@@ -48,6 +48,11 @@ function Register() {
       toast.error("Must have a Uppercase letter in the password");
       return;
     }
+    var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+    if (!allowedExtensions.exec(photo)) {
+        toast.error('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
+        return;
+    }
 
     createEmailPassword(email, password)
       .then(() => {
@@ -57,7 +62,7 @@ function Register() {
         userProfileUpdate(name, photo)
           .then(() => {
             navigate("/login");
-            toast.success("Wow Success Create");
+            toast.success("Wow Success");
           })
           .catch((error) => {
             toast.error(`${error.message}`);
@@ -73,9 +78,9 @@ function Register() {
   function socilaLogin(socialAccount) {
     socialAccount()
       .then(() => {
-        console.log("Login success");
+        // console.log("Login success");
         navigate("/");
-        toast.success("Wow Success");
+        toast.success("Login success");
       })
       .catch((error) => {
         toast.error(`${error.message}`);

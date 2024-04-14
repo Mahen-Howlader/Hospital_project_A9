@@ -35,7 +35,7 @@ function Login() {
       })
       .catch((error) => {
         // console.log(error.message);
-        toast.error(`${error.message}`);
+        toast.error(`${error.message.replace("Firebase", "")}`);
         setErrorSubmit(error.message);
       });
   };

@@ -1,7 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ApiHook from "../../CustomeHook/ApiHook";
 import { Helmet } from "react-helmet-async";
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/bundle";
+// import required modules
+import { Pagination } from "swiper/modules";
+
 function Detailspage() {
   const [details, setDetails] = useState({});
   let { id } = useParams();
@@ -16,6 +23,7 @@ function Detailspage() {
     image,
     facilities,
     price,
+    image2,
   } = details || {};
   useEffect(() => {
     if (data) {
@@ -56,7 +64,33 @@ function Detailspage() {
         <div className="bg-white shadow-md rounded-lg overflow-hidden">
           {/* Product Image */}
           <div className="w-full overflow-hidden">
-            <img className="h-72 object-cover md:h-[400px] lg:h-[500px]" src={image} alt="Product Image" style={imageStyle} />
+            <Swiper
+              style={{
+                "--swiper-navigation-color": "#fff",
+                "--swiper-pagination-color": "#fff",
+              }}
+              loop={true}
+              pagination={true}
+              className="mySwiper"
+              modules={[Pagination]}
+            >
+              <SwiperSlide>
+                <img
+                  className="h-72 object-cover md:h-[400px] lg:h-[500px]"
+                  src={image}
+                  alt="Product Image"
+                  style={imageStyle}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  className="h-72 object-cover md:h-[400px] lg:h-[500px]"
+                  src={image2}
+                  alt="Product Image"
+                  style={imageStyle}
+                />
+              </SwiperSlide>
+            </Swiper>
           </div>
           {/* Product Details */}
           <div className="p-6">
@@ -84,24 +118,25 @@ function Detailspage() {
             </div>
             {/* Facilities */}
             <div className="mb-4 space-y-2">
-              <p className="text-lg">
-                <span className="font-bold">status : </span>
+              <p className="text-lg ">
+                <span className="font-bold ">status : </span>
                 {status}
               </p>
               <p className="text-lg">
-                <span className="font-bold">Area :</span> {area}
+                <span className="font-bold ">Area :</span> {area}
               </p>
               <p className="text-lg">
                 <span className="font-bold">Location :</span> {location}
               </p>
             </div>
-            <h3 style={textStyle} className="text-base font-semibold mb-3">
-              Facilities
-            </h3>
+
             <ul
               style={listItemStyle}
               className="list-disc list-inside mb-4 bg-gray-100 p-4 rounded-lg"
             >
+              <span style={textStyle} className="text-[#00ADB5]  border-b-2  border-[#00ADB5] font-semibold mb-3">
+                Facilities
+              </span>
               {facilities &&
                 facilities.map((val, index) => (
                   <li key={index} className="p-2 rounded-lg lg:font-semibold ">

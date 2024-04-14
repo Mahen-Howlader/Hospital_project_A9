@@ -55,8 +55,8 @@ function Profile() {
             </Link>
           </div>
           <div className="pt-6 pb-8 text-gray-600 text-center">
-            <p>{displayName || "Enter your name"}</p>
-            <p className="text-sm">{email || "Enter your email"}</p>
+            <p><span className="font-bold">Name : </span> {displayName || "Enter your name"}</p>
+            <p className="text-sm"><span className="font-bold">Email : </span>{email || "Enter your email"}</p>
           </div>
           <div className="pb-10 uppercase text-center tracking-wide flex justify-around">
             <div className="posts">

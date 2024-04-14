@@ -1,7 +1,11 @@
 
+
+
+
 [
   {
     "image": "https://i.ibb.co/PFvKFJT/Hotel.jpg",
+    "image2": "https://i.ibb.co/1z89jL7/image2firsr.jpg",
     "estate_title": "The Impact of the Hotel Industry on Medical Tourism",
     "id": "H001",
     "segment_name": "Hotel",
@@ -20,6 +24,7 @@
 
   {
     "image": "https://i.ibb.co/gzFVZRZ/gesthouse.jpg",
+    "image2": "https://i.ibb.co/RCQBGGf/image2second.jpg",
     "estate_title": "Hospital Guesthouse Pacifica Comfort",
     "id": "HG001",
     "segment_name": "Hospital Guesthouse",
@@ -37,6 +42,7 @@
   },
   {
     "image": "https://i.ibb.co/YDyJ5Lq/resort.jpg",
+    "image2": "https://i.ibb.co/xhn0J1x/image3third.jpg",
     "estate_title": "Healthcare And Resort Hospitals",
     "id": "R001",
     "segment_name": "Resort",
@@ -54,6 +60,7 @@
   },
   {
     "image": "https://i.ibb.co/qMQgCnJ/V-hospital.webp",
+    "image2": "https://i.ibb.co/dJrR66H/image4four.jpg",
     "estate_title": "Mountain Retreat Cabin",
     "id": "VR001",
     "segment_name": "Vacation Rental",
@@ -71,6 +78,7 @@
   },
   {
     "image": "https://i.ibb.co/g4rL9hg/Lodge.jpg",
+    "image2": "https://i.ibb.co/L1hxvRG/image5five.jpg",
     "estate_title": "Riverside Lodge",
     "id": "L001",
     "segment_name": "Lodge",
