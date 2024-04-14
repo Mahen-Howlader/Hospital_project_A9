@@ -1,7 +1,7 @@
 # Website Informetion
 Govt.Meditest" is a comprehensive hospital information website designed to provide vital information about government-affiliated medical facilities. Serving as a reliable resource for patients, caregivers, and healthcare professionals, the platform offers detailed insights into hospital services, specialties, medical staff, and facilities available. Users can access up-to-date information on appointment scheduling, emergency services, visiting hours, and contact details. Through intuitive navigation and user-friendly interface, "Govt.Meditest" aims to bridge the gap between healthcare seekers and government healthcare providers, facilitating informed decision-making and ensuring seamless access to quality medical care. With its commitment to transparency and accessibility, the website prioritizes the health and well-being of individuals and communities.
 - Home
-``` First Slider: ````
+```First Slider:````
 Engaging Banner Images: Eye-catching visuals showcasing hospital facilities, medical staff, and patient care.
 Dynamic Text Overlay: Brief captions highlighting key features, such as quality care, advanced technology, and compassionate service. Second Section - Website Services Cart and Information:
 Service Cart: Interactive display of hospital services categorized by specialty, including outpatient care, inpatient services, diagnostic procedures, and specialized treatments.
