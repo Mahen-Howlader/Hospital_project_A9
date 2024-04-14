@@ -184,7 +184,7 @@ function Home() {
           <div className=" bg-left-top relative mx-auto container  px-5 md:px-0">
             {/* <img src="${shape1}" alt="" /> */}
             <div
-              className=" absolute  top-0 left-0"
+              className=" absolute top-0 left-0"
             >
               <img src="./shape-1.svg" alt="" />
             </div>

@@ -33,7 +33,7 @@ function Nav() {
             <div className="mx-auto container ">
               <div className="navbar ">
                 <div className="navbar-start ">
-                  <div className="dropdown">
+                  <div className="dropdown z-10">
                     <div
                       tabIndex={0}
                       role="button"

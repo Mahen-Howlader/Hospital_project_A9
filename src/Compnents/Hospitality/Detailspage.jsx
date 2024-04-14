@@ -134,7 +134,10 @@ function Detailspage() {
               style={listItemStyle}
               className="list-disc list-inside mb-4 bg-gray-100 p-4 rounded-lg"
             >
-              <span style={textStyle} className="text-[#00ADB5]  border-b-2  border-[#00ADB5] font-semibold mb-3">
+              <span
+                style={textStyle}
+                className="text-[#00ADB5]  border-b-2  border-[#00ADB5] font-semibold mb-3"
+              >
                 Facilities
               </span>
               {facilities &&

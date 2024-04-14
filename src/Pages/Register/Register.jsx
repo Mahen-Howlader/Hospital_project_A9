@@ -1,4 +1,4 @@
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import UseAuthHook from "../../CustomeHook/UseAuthHook";
 import { useState } from "react";
@@ -8,7 +8,7 @@ import bgRegister from "/Register.svg";
 import { FaGoogle } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
-import { ToastContainer, toast } from "react-toastify";
+import {  toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 function Register() {
   const [show, setShow] = useState(true);
@@ -48,11 +48,11 @@ function Register() {
       toast.error("Must have a Uppercase letter in the password");
       return;
     }
-    var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
-    if (!allowedExtensions.exec(photo)) {
-        toast.error('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
-        return;
-    }
+    // var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+    // if (!allowedExtensions.exec(photo)) {
+    //     toast.error('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
+    //     return;
+    // }
 
     createEmailPassword(email, password)
       .then(() => {
@@ -97,7 +97,7 @@ function Register() {
       </Helmet>
       <div className="mx-auto xl:px-20 container grid lg:items-center gap-y-10 lg:gap-y-0 lg:grid-cols-2 lg:gap-x-24 py-20 bg-no-repeat">
         <RegisterAnimation></RegisterAnimation>
-        <div className="mx-5 lg:mx-10 border-2 md:bg-[#8B9BC1] p-6 rounded-lg shadow-md">
+        <div className="mx-5 lg:mx-10 border-2  md:bg-[#8B9BC1] p-6 rounded-lg shadow-md">
           <h2 className="text-2xl font-bold text-center mb-6">
             Create Account
           </h2>

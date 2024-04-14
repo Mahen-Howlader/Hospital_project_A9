@@ -4,14 +4,13 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import { FaUserEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 // ..
 AOS.init();
 
 function Profile() {
   const { user } = UseAuthHook();
   const { displayName, email, photoURL } = user || {};
-
-  // console.log(name, email);
   return (
     <div
       style={{
@@ -37,26 +36,29 @@ function Profile() {
               clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw))",
             }}
           >
-            <img
-              className="w-full"
-              src={
-                photoURL ||
-                "https://cdn.pixabay.com/photo/2018/11/13/21/43/avatar-3814049_1280.png"
-              }
-            />
+            <img className="w-full" src={photoURL || "https://cdn.pixabay.com/photo/2018/11/13/21/43/avatar-3814049_1280.png"} />
           </div>
-          <div className="relative flex justify-between items-center flex-row px-6 z-50 -mt-10">
+          <div className="relative flex justify-between items-center flex-row px-6 z-50 ">
             <p className="flex items-center text-gray-400">
               <span className="inline-block w-3 h-3 bg-green-500 rounded-full mr-2"></span>
               online
             </p>
-            <Link to="/updateprofile" className="p-4 bg-red-600 rounded-full hover:bg-red-500 focus:bg-red-700 transition ease-in duration-200 focus:outline-none">
+            <Link
+              to="/updateprofile"
+              className="p-4 bg-red-600 rounded-full hover:bg-red-500 focus:bg-red-700 transition ease-in duration-200 focus:outline-none"
+            >
               <FaUserEdit className="text-white" />
             </Link>
           </div>
           <div className="pt-6 pb-8 text-gray-600 text-center">
-            <p><span className="font-bold">Name : </span> {displayName || "Enter your name"}</p>
-            <p className="text-sm"><span className="font-bold">Email : </span>{email || "Enter your email"}</p>
+            <p>
+              <span className="font-bold">Name : </span>{" "}
+              {displayName || "Enter your name"}
+            </p>
+            <p className="text-sm">
+              <span className="font-bold">Email : </span>
+              {email || "Enter your email"}
+            </p>
           </div>
           <div className="pb-10 uppercase text-center tracking-wide flex justify-around">
             <div className="posts">
