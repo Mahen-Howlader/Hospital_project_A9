@@ -21,4 +21,4 @@ After registering and submitting your information, you can view it on your profi
 
 # Login
 To access private pages on our website, you need to log in. Without logging in, you won't be able to access these private areas.
-- To access private pages on our website, you need to log in. Without logging in, you won't be able to access these private areas.
+#### To access private pages on our website, you need to log in. Without logging in, you won't be able to access these private areas.
