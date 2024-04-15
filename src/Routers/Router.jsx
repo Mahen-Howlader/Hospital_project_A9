@@ -33,7 +33,7 @@ const router = createBrowserRouter([
             path : "/doctor",
             element : <Privaterouter><Doctor></Doctor></Privaterouter> ,
             loader: async () => {
-                return fetch("doctor.json")
+                return fetch("/doctor.json")
               },
         },
         {

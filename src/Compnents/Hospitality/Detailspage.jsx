@@ -10,7 +10,7 @@ import "swiper/css/bundle";
 import { Pagination } from "swiper/modules";
 
 function Detailspage() {
-  const [details, setDetails] = useState({});
+  const [details, setDetails] = useState([]);
   let { id } = useParams();
   const { data } = ApiHook();
   console.log(details);
@@ -54,7 +54,7 @@ function Detailspage() {
   const listItemStyle = {
     marginBottom: "0.75rem",
   };
-  console.log(facilities);
+  // console.log(facilities);
   return (
     <div>
       <Helmet>
