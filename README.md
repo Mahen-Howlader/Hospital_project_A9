@@ -7,7 +7,7 @@ Engage with our captivating banner images, presenting a visual journey through o
 - 2 . Second Section - Website Services Cart and Information
  Explore our comprehensive range of hospital services conveniently organized in an interactive service cart. From outpatient care to specialized treatments, each service is elegantly summarized in information cards, detailing benefits, eligibility criteria, and contact information for further inquiries.
   <br/>
-3 . Third Section - Health and Service Information
+- 3 . Third Section - Health and Service Information
 Delve into our wealth of health resources, offering accessible links to educational materials, informative articles, and practical guides covering diverse health topics, preventive care, and wellness tips. Gain insights into our hospital's amenities, including state-of-the-art medical equipment, modern infrastructure, and dedicated support services, fostering transparency and trust among our visitors.
 
 # Doctor Page
