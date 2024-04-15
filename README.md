@@ -24,3 +24,4 @@ To access private pages on our website, you need to log in. Without logging in, 
 
 ##### To access private pages on our website, you need to log in. Without logging in, you won't be able to access these private areas.
 [Swiper.js](https://swiperjs.com/)
+[react-toastify](https://fkhadra.github.io/react-toastify/installation/)
