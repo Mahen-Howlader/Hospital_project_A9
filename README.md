@@ -10,4 +10,5 @@ Explore our comprehensive range of hospital services conveniently organized in a
 
 ##### Third Section - Health and Service Information:
 Delve into our wealth of health resources, offering accessible links to educational materials, informative articles, and practical guides covering diverse health topics, preventive care, and wellness tips. Gain insights into our hospital's amenities, including state-of-the-art medical equipment, modern infrastructure, and dedicated support services, fostering transparency and trust among our visitors.
-
+<br/>
+```1. Doctor```
