@@ -6,8 +6,9 @@ import UseAuthHook from "../../CustomeHook/UseAuthHook";
 import bgRegister from "/Register.svg";
 import { Helmet } from "react-helmet-async";
 import { FaGoogle, FaTwitter } from "react-icons/fa6";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Spinner from "../../Compnents/Spinnner/Spinner";
 function Login() {
   const [show, setShow] = useState(true);
   const [errorSubmit, setErrorSubmit] = useState("");
@@ -17,8 +18,13 @@ function Login() {
   // console.log(location)
   const form = location?.state || "/";
 
-  const { TwitterCreate, googleCreate, LogInWithEmailAndPassword } =
-    UseAuthHook();
+  const {
+    TwitterCreate,
+    googleCreate,
+    LogInWithEmailAndPassword,
+    setLoading,
+    loading,
+  } = UseAuthHook();
   const {
     register,
     handleSubmit,
@@ -27,7 +33,7 @@ function Login() {
 
   const onSubmit = (data) => {
     LogInWithEmailAndPassword(data.email, data.password)
-    .then(() => {
+      .then(() => {
         toast.success("Wow Login Success");
         // alert("Login success");
         navigate(form);
@@ -124,19 +130,20 @@ function Login() {
             onClick={() => socilaLogin(TwitterCreate)}
             className="bg-blue-400 text-white py-2 px-4 rounded-md flex  justify-center gap-x-4 items-center hover:bg-blue-500"
           >
-           <FaTwitter /> Twitter Login 
+            <FaTwitter /> Twitter Login
           </button>
           <button
             onClick={() => socilaLogin(googleCreate)}
             id="googleLogin"
             className="bg-red-600 text-white py-2 px-4 rounded-md flex  justify-center gap-x-4 items-center hover:bg-red-700"
           >
-           <FaGoogle />  Google Login 
+            <FaGoogle /> Google Login
           </button>
         </div>
         <div className="text-center mt-6">
           <Link to="/register" className=" hover:underline text-black">
-            Don't have an account? <span className="font-semibold text-blue-800">Register here.</span>
+            Don't have an account?{" "}
+            <span className="font-semibold text-blue-800">Register here.</span>
           </Link>
         </div>
       </div>

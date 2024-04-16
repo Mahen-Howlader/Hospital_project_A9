@@ -1,5 +1,4 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useForm } from "react-hook-form";
 import UseAuthHook from "../../CustomeHook/UseAuthHook";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -8,8 +7,9 @@ import bgRegister from "/Register.svg";
 import { FaGoogle } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
-import {  toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useForm } from "react-hook-form";
 function Register() {
   const [show, setShow] = useState(true);
   const navigate = useNavigate();
@@ -21,6 +21,8 @@ function Register() {
     userProfileUpdate,
     logOut,
     setUser,
+    setLoading,
+    loading,
   } = UseAuthHook();
 
   // react hook from
@@ -35,6 +37,18 @@ function Register() {
     setUser(null);
     logOut();
   }
+
+  const [check, setCheck] = useState(false);
+  function handelCheckBox(e) {
+    const teamRules = e.target.checked;
+    if(teamRules){
+      setCheck(true);
+    }
+    else{
+      setCheck(false)
+    }
+  }
+
 
   const onSubmit = (data) => {
     const { password, photo, email, name } = data;
@@ -53,6 +67,11 @@ function Register() {
     //     toast.error('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
     //     return;
     // }
+
+    if(!check){
+      toast.error("Please Hospital rules: accepted");
+      return 
+    }
 
     createEmailPassword(email, password)
       .then(() => {
@@ -97,7 +116,7 @@ function Register() {
       </Helmet>
       <div className="mx-auto xl:px-20 container grid lg:items-center gap-y-10 lg:gap-y-0 lg:grid-cols-2 lg:gap-x-24 py-20 bg-no-repeat">
         <RegisterAnimation></RegisterAnimation>
-        <div className="mx-5 lg:mx-10 border-2  md:bg-[#8B9BC1] p-6 rounded-lg shadow-md">
+        <div className="mx-5 lg:mx-10 border-2 bg-[#8b9bc1bb]  md:bg-[#8B9BC1] p-6 rounded-lg shadow-md">
           <h2 className="text-2xl font-bold text-center mb-6">
             Create Account
           </h2>
@@ -147,6 +166,7 @@ function Register() {
                 {...register("photo")}
               />
             </div>
+
             <div className="mb-4">
               <label htmlFor="password" className="block text-sm font-semibold">
                 Password:
@@ -172,6 +192,18 @@ function Register() {
                   This field is required
                 </span>
               )}
+            </div>
+
+            <div className="flex items-center gap-x-4 mb-3">
+              <input
+                type="checkbox"
+                id="check"
+                onChange={handelCheckBox}
+                className="checkbox"
+              />
+              <label htmlFor="check" className="cursor-pointer">
+              Hospital rules: accepts 
+              </label>
             </div>
             <button
               type="submit"

@@ -11,6 +11,7 @@ import {
 export const ProviderContext = createContext(null);
 import { GoogleAuthProvider } from "firebase/auth";
 import { TwitterAuthProvider } from "firebase/auth";
+import Spinner from "../Compnents/Spinnner/Spinner";
 
 function AuthProvider({ children }) {
   const Gprovider = new GoogleAuthProvider();
@@ -25,13 +26,11 @@ function AuthProvider({ children }) {
 
   //   google register
   function googleCreate() {
-    setLoading(true);
     return signInWithPopup(auth, Gprovider);
   }
 
   //   twitter register
   function TwitterCreate() {
-    setLoading(true);
     return signInWithPopup(auth, Tprovider);
   }
 
@@ -43,7 +42,7 @@ function AuthProvider({ children }) {
   }
 
   function userProfileUpdate(name, pahoturl) {
-    setLoading(true)
+    setLoading(true);
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: pahoturl,
@@ -52,21 +51,18 @@ function AuthProvider({ children }) {
 
   // signInWithEmailAndPassword
   function LogInWithEmailAndPassword(email, password) {
-    setLoading(true)
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   }
 
   //observe
   useEffect(() => {
     const subscribe = onAuthStateChanged(auth, (currentUser) => {
-        setUser(currentUser);
-        setLoading(false);
+      setUser(currentUser);
+      setLoading(false);
     });
-    return () =>subscribe();
+    return () => subscribe();
   }, []);
-
-
-
 
   const data = {
     createEmailPassword,
@@ -78,7 +74,7 @@ function AuthProvider({ children }) {
     userProfileUpdate,
     LogInWithEmailAndPassword,
     loading,
-    setLoading
+    setLoading,
   };
   return (
     <ProviderContext.Provider value={data}>{children}</ProviderContext.Provider>

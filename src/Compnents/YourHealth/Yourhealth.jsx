@@ -1,11 +1,9 @@
 import LotteiFile from "./LotteiFile";
-import AOS from "aos";
-import "aos/dist/aos.css";
-AOS.init();
 function Yourhealth() {
   return (
     <div
     data-aos-anchor="#health-abi"
+      data-aos-delay="2000"
       data-aos-duration="1000"
       data-aos="zoom-in-down"
       className="relative"
@@ -28,7 +26,7 @@ function Yourhealth() {
 
       <div
         id="health-abi"
-        className="absolute size-5  right-5 bottom-5"
+        className="absolute size-5   right-5 top-2/4"
       ></div>
     </div>
   );
