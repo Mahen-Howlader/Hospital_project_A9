@@ -24,8 +24,13 @@ To access private pages on our website, you need to log in. Without logging in, 
 
 ##### To access private pages on our website, you need to log in. Without logging in, you won't be able to access these private areas.
 
-#live_project link 
-https://assignment-9-project-9c664.web.app  <br/>
+##
+**live_project link**
+https://assignment-9-project-9c664.web.app  
+<br/>
+##
+
+-**Package use**
 [Swiper.js](https://swiperjs.com/)  <br/>
 [AOS scroll animation](https://michalsnik.github.io/aos/)   <br/>
 [react-toastify](https://fkhadra.github.io/react-toastify/installation/) <br/>
