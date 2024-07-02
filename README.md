@@ -1,3 +1,10 @@
+
+##
+**live_project link**
+https://assignment-9-project-9c664.web.app  
+<br/>
+##
+
 # Website Information
 Govt. Meditest" is a comprehensive hospital information website designed to provide vital information about government-affiliated medical facilities. Serving as a reliable resource for patients, caregivers, and healthcare professionals, the platform offers detailed insights into hospital services, specialities, medical staff, and facilities available. Users can access up-to-date information on appointment scheduling, emergency services, visiting hours, and contact details. Through intuitive navigation and a user-friendly interface, "Govt. Meditest" aims to bridge the gap between healthcare seekers and government healthcare providers, facilitating informed decision-making and ensuring seamless access to quality medical care. With its commitment to transparency and accessibility, the website prioritizes the health and well-being of individuals and communities.
 # Home
@@ -24,13 +31,29 @@ To access private pages on our website, you need to log in. Without logging in, 
 
 ##### To access private pages on our website, you need to log in. Without logging in, you won't be able to access these private areas.
 
-##
-**live_project link**
-https://assignment-9-project-9c664.web.app  
-<br/>
-##
+
+## Skills
+- HTML
+- CSS
+- Tailwind CSS
+- React JS
+- Firebase
+- node js
+- Express js
+- mongoDB
+
+## Running the Project
+
+```bash
+// Install dependencies
+npm install
+
+// Run the project
+npm run dev
+```
 
 -**Package use**
+<br>
 [Swiper.js](https://swiperjs.com/)  <br/>
 [AOS scroll animation](https://michalsnik.github.io/aos/)   <br/>
 [react-toastify](https://fkhadra.github.io/react-toastify/installation/) <br/>
